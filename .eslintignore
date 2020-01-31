@@ -1,0 +1,6 @@
+**/*.svg
+**/*.png
+**/*.css
+src/react-auth0-wrapper.js
+src/components/StockTable/TableIcons.js
+build

@@ -1,0 +1,37 @@
+version: "3.1"
+services:
+  compasso-app:
+    image: "compasso-sails-app"
+    build: 
+      context: .
+    container_name: "compasso-app"
+    volumes:
+      - .:/app
+    ports:
+      - 1337:1337
+    links:
+      - mongodbcompasso
+    depends_on:
+      - mongodbcompasso
+
+  mongodbcompasso:
+    image: mongo
+    container_name: "mongodbcompasso"
+    ports:
+      - 27018:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: compasso
+    logging:
+      driver: none 
+
+  mongosetup:
+    image: mongo
+    volumes:
+      - ./default-db:/dump
+    entrypoint: ["mongorestore", "--host", "mongodbcompasso", "--username", "root", "--password", "password", "/dump"]
+    links:
+      - mongodbcompasso
+    logging:
+      driver: none 
