@@ -83,7 +83,9 @@ A aplicação utiliza a porta 1337.
 ### Cadastrar cidade
 
 **Método:** POST
+
 **Rota:** /api/v1/city
+
 **Body:**
 
 ```json
@@ -96,7 +98,9 @@ A aplicação utiliza a porta 1337.
 ### Cadastrar cliente
 
 **Método:** POST
+
 **Rota:** /api/v1/client
+
 **Body:**
 
 ```json
@@ -112,32 +116,39 @@ A aplicação utiliza a porta 1337.
 ### Consultar cidade pelo nome
 
 **Método:** GET
+
 **Rota:** /api/v1/cities?name=Pelotas
 
 ### Consultar cidade pelo estado
 
 **Método:** GET
+
 **Rota:** /api/v1/cities?state=Rio%20Grande%20do%20Sul
 
 ### Consultar cliente pelo nome
 
 **Método:** GET
+
 **Rota:** /api/v1/clients?name=Huberto%20Kaiser%20Filho
 
 ### Consultar cliente pelo ID
 
 **Método:** GET
+
 **Rota:** /api/v1/client/5e33a922e148e90012bcd17a
 
 ### Consultar cliente pelo ID
 
 **Método:** DELETE
+
 **Rota:** /api/v1/client/5e33a922e148e90012bcd17a
 
 ### Alterar o nome do cliente
 
 **Método:** PUT
+
 **Rota:** /api/v1/client/5e33a922e148e90012bcd17a
+
 **Body:**
 
 ```json
